@@ -87,7 +87,7 @@ export default async function sendEmail(req: NextApiRequest, res: NextApiRespons
     </div>
     <div class="footer">
       <p>This email was sent from your portfolio site.</p>
-      <p>For more information, visit our <a href="https://somnathbanerjee.site/" target="_blank">website</a>.</p>
+      <p>For more information, visit our <a href="https:///" target="_blank">website</a>.</p>
     </div>
   </div>
 </body>

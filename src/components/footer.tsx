@@ -1,101 +1,66 @@
-'use client';
 import React from 'react';
-import Image from 'next/image';
-import { BsBehance, BsLinkedin, BsYoutube } from 'react-icons/bs';
-import { HiMail, HiPhone } from 'react-icons/hi';
+import { Mail, Phone, Youtube, Linkedin, User, Instagram } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className=" relative min-h-screen w-full bg-black relative text-white py-16 px-4">
-      <div className="container mx-auto max-w-6xl">
-        {/* Main content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Left side - Text and contacts */}
-          <div>
-            <h2 className="text-8xl font-bold text-amber-500 mb-12 animate-fade-in">
-              THANK<br />YOU
-            </h2>
+    <section className="min-h-screen w-full bg-black text-white px-6 py-12">
+      <div className="max-w-6xl mx-auto">
+        {/* THANK YOU Text */}
+        <h1 className="text-[80px] sm:text-[120px] font-bold text-yellow-400 mb-20">
+          THANK<br />YOU
+        </h1>
 
-            <div className="space-y-6">
-              {/* Contact Information */}
-              <div className="flex items-center gap-4 hover:text-amber-500 transition-colors">
-                <div className="w-8 h-8 rounded-full border border-white flex items-center justify-center">
-                  <BsBehance size={20} />
-                </div>
-                <span>Lokesh Verma</span>
+        {/* Contact Information Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Left Column */}
+          <div className="space-y-6">
+            <div className="flex items-center gap-4">
+              <div className="w-10 h-10 rounded-full border border-white flex items-center justify-center">
+                <User className="w-5 h-5" />
               </div>
+              <span className="text-lg">Lokesh Verma</span>
+            </div>
 
-              <div className="flex items-center gap-4 hover:text-amber-500 transition-colors">
-                <div className="w-8 h-8 rounded-full border border-white flex items-center justify-center">
-                  <HiMail size={20} />
-                </div>
-                <span>lokeshverma6263@gmail.com</span>
+            <div className="flex items-center gap-4">
+              <div className="w-10 h-10 rounded-full border border-white flex items-center justify-center">
+                <Mail className="w-5 h-5" />
               </div>
+              <span className="text-lg">editorlv05@gmail.com</span>
+            </div>
 
-              <div className="flex items-center gap-4 hover:text-amber-500 transition-colors">
-                <div className="w-8 h-8 rounded-full border border-white flex items-center justify-center">
-                  <HiPhone size={20} />
-                </div>
-                <span>+91 6263585907</span>
+            <div className="flex items-center gap-4">
+              <div className="w-10 h-10 rounded-full border border-white flex items-center justify-center">
+                <Phone className="w-5 h-5" />
               </div>
-
-              <div className="flex items-center gap-4 hover:text-amber-500 transition-colors">
-                <div className="w-8 h-8 rounded-full border border-white flex items-center justify-center">
-                  <BsLinkedin size={20} />
-                </div>
-                <span>Lokesh Verma</span>
-              </div>
-
-              <div className="flex items-center gap-4 hover:text-amber-500 transition-colors">
-                <div className="w-8 h-8 rounded-full border border-white flex items-center justify-center">
-                  <BsYoutube size={20} />
-                </div>
-                <span>@lokesh</span>
-              </div>
+              <span className="text-lg">+91 9109985907</span>
             </div>
           </div>
 
-          {/* Right side - Image */}
-          <div className="relative h-[400px] lg:h-full">
-  <Image
-    src="/lv1.png"
-    alt="Videographer with camera"
-    fill
-    className="object-contain object-center rounded-lg"
-  />
-</div>
+          {/* Right Column */}
+          <div className="space-y-6">
+            <div className="flex items-center gap-4">
+              <div className="w-10 h-10 rounded-full border border-white flex items-center justify-center">
+                <Linkedin className="w-5 h-5" />
+              </div>
+              <span className="text-lg">Lokesh Verma</span>
+            </div>
 
-        </div>
+            <div className="flex items-center gap-4">
+              <div className="w-10 h-10 rounded-full border border-white flex items-center justify-center">
+                <Youtube className="w-5 h-5" />
+              </div>
+              <span className="text-lg">@editor.lv_05</span>
+            </div>
 
-        {/* Portfolio Stats */}
-        <div className="mt-16 flex flex-col items-center">
-          <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mb-4 hover:scale-110 transition-transform">
-            <span className="text-2xl">👍</span>
-          </div>
-          <h3 className="text-xl font-bold mb-2">PORTFOLIO VIDEO EDITOR</h3>
-          <div className="flex items-center gap-4 text-gray-400">
-            <span>29</span>
-            <span>2.3K</span>
-            <span>0</span>
+            <div className="flex items-center gap-4">
+              <div className="w-10 h-10 rounded-full border border-white flex items-center justify-center">
+                <Instagram className="w-5 h-5" />
+              </div>
+              <span className="text-lg">editor_lv_05</span>
+            </div>
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        .animate-fade-in {
-          animation: fadeIn 0.6s ease-out forwards;
-        }
-      `}</style>
-    </footer>
+    </section>
   );
 }

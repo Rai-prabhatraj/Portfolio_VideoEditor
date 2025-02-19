@@ -76,14 +76,14 @@ export default function About() {
                 <div className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center">
                   <Phone size={20} />
                 </div>
-                <div className="font-semibold">+91 6263585907</div>
+                <div className="font-semibold">+91 9109985907 </div>
               </div>
 
               <div className="flex items-center gap-4">
                 <div className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center">
                   <Mail size={20} />
                 </div>
-                <div className="font-semibold">lokeshverma6263@gmail.com</div>
+                <div className="font-semibold">editorlv05@gmail.com</div>
               </div>
             </div>
           </div>

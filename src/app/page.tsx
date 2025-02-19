@@ -7,14 +7,16 @@ import Skills from "@/components/skills";
 import InstagramReels from "@/components/reels";
 import Footer from "@/components/footer";
 import WhatsAppChatWidget from "@/components/WhatsAppChatWidget"; // Adjust the path if necessary
-
+import WorkExperience from "@/components/work";
 export default function Home() {
   return (
     <main className="flex flex-col items-center pt-20 md:pt-28 px-4">
       <Intro />
       <About />
+      <WorkExperience />
       <Projects />
       <InstagramReels />
+      
       <Skills />
       {/* <Contact /> */}
       <Footer />

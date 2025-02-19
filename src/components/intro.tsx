@@ -31,9 +31,16 @@ export default function Header() {
           <div className="relative w-full flex justify-center">
             <h1 className="relative text-6xl sm:text-8xl md:text-[12rem] font-extrabold tracking-wide text-white/90 uppercase">
               
-              {/* Large Profile Image (Without Border) */}
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] rounded-full overflow-hidden">
-                <img src="/l1.png" alt="Profile" className="w-full h-full object-cover" />
+              {/* Larger Profile Image */}
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] rounded-full overflow-hidden">
+                <img 
+                  src="/l1.png" 
+                  alt="Profile" 
+                  className="w-full h-full object-cover object-top" 
+                  style={{
+                    objectPosition: "50% 20%"
+                  }}
+                />
               </div>
 
               {/* Text Behind Image */}
@@ -43,7 +50,7 @@ export default function Header() {
           </div>
 
           {/* Profile Description */}
-          <div className="mt-[10rem] md:mt-[12rem]">  {/* Increased margin for spacing */}
+          <div className="mt-[8rem] md:mt-[10rem]">  {/* Adjusted margin for larger image */}
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

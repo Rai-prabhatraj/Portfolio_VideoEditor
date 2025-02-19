@@ -12,7 +12,7 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  title: "Suvajit Sen",
+  title: "Lokesh Verma",
   description: "Personal portfolio",
 };
 

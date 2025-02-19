@@ -1,57 +1,54 @@
+
 "use client";
 
-import React from "react";
+import React from 'react';
 import SectionHeading from "./section-heading";
-import { skillsData } from "@/lib/data";
-import { useSectionInView } from "@/lib/useInView";
-import { motion } from "framer-motion";
 
-// Define animation variants
-const fadeInAnimationVariants = {
-  initial: {
-    opacity: 0,
-    y: 20,
-  },
-  animate: (index: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 0.1 * index,
-      duration: 0.5,
-    },
-  }),
-};
 
-export default function Skills() {
-  const { ref } = useSectionInView("#skills");
+const Skills = () => {
+  const skillsData = [
+    { id: 'Dr', name: 'Davinci Resolve', percentage: 65, color: '#FFCC00' },
+    { id: 'Ai', name: 'Illustrator', percentage: 30, color: '#FFCC00' },
+    { id: 'F', name: 'Fusion', percentage: 50, color: '#FFCC00' },
+    { id: 'Ps', name: 'Photoshop', percentage: 40, color: '#FFCC00' },
+    { id: 'C', name: 'Capcut', percentage: 90, color: '#FFCC00' },
+    { id: 'Lt', name: 'Lightroom', percentage: 75, color: '#FFCC00' },
+    { id: 'Vn', name: 'VN', percentage: 70, color: '#FFCC00' },
+    { id: 'C', name: 'Canva', percentage: 70, color: '#FFCC00' },
+    { id: 'Af', name: 'After Effect', percentage: 50, color: '#FFCC00' },
+  ];
 
   return (
-    <section
-      id="skills"
-      ref={ref}
-      className="relative min-h-screen w-full bg-black"
-    >
-      <SectionHeading>
-        {"My Skills"}
+    
+    <section className="w-full bg-black text-white py-20 px-4">
+              <SectionHeading>
+        {"Services"}
       </SectionHeading>
-      <ul className="flex flex-wrap justify-center gap-4 text-lg text-gray-800">
-        {skillsData.map((skill, index) => {
-          const Icon = skill.icon; // Render the component
-          return (
-            <motion.li
-              className="flex items-center gap-2 bg-white borderBlack rounded-xl px-5 py-3 dark:bg-white/10 dark:text-white/80"
-              key={skill.name}
-              variants={fadeInAnimationVariants}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              custom={index}
-            >
-              <Icon /> {skill.name}
-            </motion.li>
-          );
-        })}
-      </ul>
+  
+      <div className="max-w-4xl mx-auto">
+        
+        <h1 className="text-6xl font-bold text-center mb-6">Why Choose Me</h1>
+        
+        <p className="text-xl text-center mb-16">
+          Because I never stop looking for new styles and forms to express myself to improve my skills.
+        </p>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {skillsData.map((skill) => (
+            <div key={skill.name} className="flex items-center w-full">
+              <div className="flex items-center bg-gradient-to-r from-yellow-400 to-yellow-600/80 rounded-sm w-4/5">
+              <div className="w-16 h-16 flex items-center justify-center bg-yellow-400 text-black font-bold text-3xl">
+                {skill.id}
+              </div>
+                <div className="px-4 font-bold text-xl">{skill.name}</div>
+              </div>
+              <div className="flex-1 text-2xl font-bold pl-4">{skill.percentage}%</div>
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   );
-}
+};
+
+export default Skills;
