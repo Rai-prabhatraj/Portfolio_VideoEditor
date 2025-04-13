@@ -9,7 +9,11 @@ export default function Header() {
   const { ref } = useSectionInView("#home", 0.5);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
 
-  const handleButtonClick = (section) => {
+  interface HandleButtonClickProps {
+    section: string;
+  }
+
+  const handleButtonClick = (section: HandleButtonClickProps['section']): void => {
     setActiveSection(section);
     setTimeOfLastClick(Date.now());
   };
