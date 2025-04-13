@@ -1,13 +1,18 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Mail } from 'lucide-react';
+import { Mail, FileText } from 'lucide-react';
 import { useActiveSectionContext } from '@/containers/active-section';
 import { useSectionInView } from '@/lib/useInView';
 
 export default function Header() {
   const { ref } = useSectionInView("#home", 0.5);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
+
+  const handleButtonClick = (section) => {
+    setActiveSection(section);
+    setTimeOfLastClick(Date.now());
+  };
 
   return (
     <section
@@ -68,6 +73,34 @@ export default function Header() {
             >
               I am a graphic designer and video editor based in Bhilai, India.
             </motion.p>
+
+            {/* Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7 }}
+              className="flex justify-center gap-4 mt-8"
+            >
+           <Link 
+  href="/resume.pdf" 
+  onClick={() => handleButtonClick("resume")}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center gap-2 bg-amber-500 text-black px-6 py-3 rounded-full font-medium transition-all hover:bg-amber-600"
+>
+  <FileText size={18} />
+  Resume
+</Link>
+              
+              <Link 
+                href="#contact"
+                onClick={() => handleButtonClick("contact")}
+                className="flex items-center gap-2 bg-transparent border-2 border-white text-white px-6 py-3 rounded-full font-medium transition-all hover:bg-white/10"
+              >
+                <Mail size={18} />
+                Contact Us
+              </Link>
+            </motion.div>
           </div>
         </motion.div>
       </div>

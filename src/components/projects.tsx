@@ -24,7 +24,7 @@ export default function Projects() {
           transition={{ duration: 0.6 }}
         >
              <h1 className="text-amber-500 text-5xl font-bold text-center mb-20">
-          Projects
+          Video Timeline
           <div className="w-48 h-1 bg-amber-500 mx-auto mt-2"></div>
         </h1>
 
@@ -43,7 +43,7 @@ export default function Projects() {
       </div>
 
       {/* My Long Videos Section */}
-      <SectionHeading>My Long Videos</SectionHeading>
+      <SectionHeading>Youtube Long Videos</SectionHeading>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 w-full">
         {longVideos.map((project, index) => (
           <div key={index} className="w-full">
